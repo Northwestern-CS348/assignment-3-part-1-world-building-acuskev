@@ -177,6 +177,18 @@ class KBTest(unittest.TestCase):
         ]
         self.checkKb(p8.kb, required, forbidden)
 
+    def test11(self):
+        th = TowerOfHanoiGame()
+        th.read('hanoi_two_smallest_on_peg_three.txt')
+        required = [
+            'fact: (empty peg2)',
+            'fact: (top disk1 peg3)'
+        ]
+        forbidden = [
+            'fact: (movable disk1 peg1 peg1)'
+        ]
+        self.checkKb(th.kb, required, forbidden)
+
 
 if __name__ == '__main__':
     unittest.main()
